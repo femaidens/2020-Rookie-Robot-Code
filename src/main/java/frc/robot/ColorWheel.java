@@ -63,10 +63,6 @@ public class ColorWheel extends SubsystemBase {
       return new RawColor(0,0,0,0);
     }
 
-  
-
-
-
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

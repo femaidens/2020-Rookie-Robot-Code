@@ -24,6 +24,26 @@ public class RobotMap {
     public static int climbEncoderPortB = 8;
     public static int motorPort = 6;
     public static int joyPort = 9;
+    public static int frontLeftPort = 10;
+    public static int rearLeftPort = 11;
+    public static int middleLeftPort = 12;
+    public static int frontRightPort = 13;
+    public static int rearRightPort = 14;
+    public static int middleRightPort = 15;
+    public static int gyroPort = 18;
+    public static int foldMotorPort = 19;
+    public static int intakeMotorPort = 20;
+    public static int foldLimitPort = 21;
+    public static int hopperMotor1Port = 22;
+    public static int hopperMotor2Port = 23;
+    public static int hopperMotor3Port = 24;
+    public static int turretMotorPort = 25;
+    public static int turretLimit1Port = 26;
+    public static int turretLimit2Port = 27;
+    public static int hoodMotorPort = 28;
+    public static int shooterMotorPort = 29;
+
+
 
     public static I2C.Port i2cPort = I2C.Port.kOnboard;
 }

@@ -1,0 +1,39 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2018-2019 FIRST. All Rights Reserved.                        */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* the project.                                                               */
+/*----------------------------------------------------------------------------*/
+
+package frc.robot;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.*;
+import edu.wpi.first.wpilibj.command.Command;
+//import frc.robot.commands.*;
+
+
+public class OI {
+
+    public static Joystick joy = new Joystick(RobotMap.joyPort);
+    public static Button two = new JoystickButton(joy,1);
+    public static Button three = new JoystickButton(joy,2);
+    public static Button shoot = new JoystickButton(joy,3);
+	public static Button intakeBall = new JoystickButton(joy,4);
+	public static Button outtakeBall = new JoystickButton(joy,5);
+    public static Button hood = new JoystickButton(joy,6);
+    public static Button autoAlign = new JoystickButton(joy,7);
+
+
+    public static void bindButtons() {
+        two.whenPressed(new StageTwoCom());
+        three.whenPressed(new StageThreeCom());
+        shoot.whileHeld(new ShootCom());
+        intakeBall.whileHeld(new IntakeBallCom());
+        outtakeBall.whileHeld(new OuttakeBallCom());
+        autoAlign.whenPressed(new AutoAlignCom());
+
+    }
+
+}

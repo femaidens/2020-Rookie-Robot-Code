@@ -35,29 +35,29 @@ public class Climb extends SubsystemBase {
 
 	public static double distance;
 
-  //detects height range of climb bar in inches//
-public static void start(){
-	if (ultra.getRangeInches() > 36 && ultra.getRangeInches() < 84) {
-motor.set(1.0);
-      distance = climbEncoder.getDistance();
-	}else{
-		motor.set(0.0);
-	}
-} 
+	  //detects height range of climb bar in inches// 
+	public static void start(){
+		if (ultra.getRangeInches() > 36 && ultra.getRangeInches() < 84) {
+			motor.set(1.0);
+      		distance = climbEncoder.getDistance();
+		}else{
+			motor.set(0.0);
+		}
+	} 
 
-public static void stop(){
-	if (limitBottom.get() == true || limitTop.get() == true) {
-		motor.set(0.0);
+	public static void stop(){
+		if (limitBottom.get() == true || limitTop.get() == true) {
+			motor.set(0.0);
+		}
 	}
-}
 
-public static void down() {
-	climbEncoder.reset();
-while (climbEncoder.getDistance() < distance) {
-		motor.set(joy.getRawAxis(1));
-}
+	public static void down() {
+		climbEncoder.reset();
+		while (climbEncoder.getDistance() < distance) {
+			motor.set(joy.getRawAxis(1));
+		}
 		motor.stopMotor();
-}
+	}
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
