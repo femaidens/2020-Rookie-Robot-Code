@@ -9,6 +9,14 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.AutoAlignCom;
+import frc.robot.commands.DriveTeleopCom;
+import frc.robot.commands.IntakeBallCom;
+import frc.robot.commands.OuttakeBallCom;
+import frc.robot.commands.ShootCom;
+import frc.robot.commands.StageThreeCom;
+import frc.robot.commands.StageTwoCom;
+import frc.robot.commands.SwitchGearCom;
 import edu.wpi.first.wpilibj.buttons.*;
 //import edu.wpi.first.wpilibj.command.Command;
 //import frc.robot.commands.*;

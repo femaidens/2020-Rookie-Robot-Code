@@ -5,25 +5,27 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.ColorWheel;
 
-public class OuttakeBallCom extends Command {
-  public OuttakeBallCom() {
+public class StageTwoCom extends Command {
+  public StageTwoCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called when the command is initially scheduled.
+  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    ColorWheel.getInitialColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    Shooter.outtakeBall();
+    ColorWheel.spinTwo();
   }
 
   // Returns true when the command should end.
@@ -31,14 +33,12 @@ public class OuttakeBallCom extends Command {
   protected boolean isFinished() {
     return false;
   }
-
-  protected void end() {
-    Shooter.ballMotor.set(0.0);
-	  Shooter.foldMotor.set(0.0);
-  }
   
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
+  @Override
+  protected void end() {
+    ColorWheel.colorMotor.stopMotor();
+  }
+
   @Override
   protected void interrupted() {
   }

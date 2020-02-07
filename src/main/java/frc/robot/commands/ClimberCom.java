@@ -5,35 +5,36 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Climb;
 
-public class SwitchGearCom extends Command {
-  public SwitchGearCom() {
+public class ClimberCom extends Command {
+  public ClimberCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called just before this Command runs the first time
   @Override
-  protected void initialize() {
-  }
-
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  protected void execute() {
-    DriveTrain.switchGear();
-  }
-
-  // Returns true when the command should end.
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
+  protected void initialize(){
+		Climb.climbEncoder.reset();
+	}
 
   @Override
-  protected void end() {
+	protected void execute(){
+		Climb.start();
+		Climb.stop();
+	}
+
+  @Override
+	protected boolean isFinished(){
+		return false;
+	}
+
+  @Override
+	protected void end(){
+		Climb.down();
   }
 
   // Called when another command which requires one or more of the same
@@ -41,4 +42,6 @@ public class SwitchGearCom extends Command {
   @Override
   protected void interrupted() {
   }
+
+  
 }

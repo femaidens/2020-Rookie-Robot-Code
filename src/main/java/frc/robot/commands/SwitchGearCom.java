@@ -5,18 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import com.revrobotics.ColorSensorV3;
+import frc.robot.DriveTrain;
 
-public class StageThreeCom extends Command {
-  public StageThreeCom() {
+public class SwitchGearCom extends Command {
+  public SwitchGearCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called when the command is initially scheduled.
+  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
   }
@@ -24,13 +24,7 @@ public class StageThreeCom extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    ColorSensorV3.RawColor target = ColorWheel.getTargetColor();
-    while (ColorWheel.colorSensor.getRawColor() != target) {
-      //ColorWheel.colorMotor.set(1.0);
-      System.out.println("Ludmilla is a meanie");
-    } 
-    
-    System.out.println("Kathryn is a meanie");
+    DriveTrain.switchGear();
   }
 
   // Returns true when the command should end.
@@ -39,10 +33,10 @@ public class StageThreeCom extends Command {
     return false;
   }
 
+  @Override
   protected void end() {
-		ColorWheel.colorMotor.stopMotor();
   }
-  
+
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override

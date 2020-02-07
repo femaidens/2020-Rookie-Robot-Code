@@ -5,38 +5,39 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Shooter;
 
-public class DriveTeleopCom extends Command {
-  public DriveTeleopCom() {
+public class OuttakeBallCom extends Command {
+  public OuttakeBallCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called just before this Command runs the first time
+  // Called when the command is initially scheduled.
   @Override
   protected void initialize() {
   }
 
-  // Called repeatedly when this Command is scheduled to run
+  // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    DriveTrain.driveJoy();
+    Shooter.outtakeBall();
   }
 
-  // Make this return true when this Command no longer needs to run execute()
+  // Returns true when the command should end.
   @Override
   protected boolean isFinished() {
     return false;
   }
 
-  // Called once after isFinished returns true
-  @Override
   protected void end() {
+    Shooter.ballMotor.set(0.0);
+	  Shooter.foldMotor.set(0.0);
   }
-
+  
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override

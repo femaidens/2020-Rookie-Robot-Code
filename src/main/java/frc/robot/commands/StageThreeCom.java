@@ -5,12 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.ColorWheel;
 
-public class AutoAlignCom extends Command {
-  public AutoAlignCom() {
+import com.revrobotics.ColorSensorV3;
+
+public class StageThreeCom extends Command {
+  public StageThreeCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -18,15 +21,18 @@ public class AutoAlignCom extends Command {
   // Called when the command is initially scheduled.
   @Override
   protected void initialize() {
-    Limelight.setLiveStream(0);
-    Limelight.setLEDMode(3);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    Limelight.rotateHorizontal();
-    Limelight.rotateVertical();
+    ColorSensorV3.RawColor target = ColorWheel.getTargetColor();
+    while (ColorWheel.colorSensor.getRawColor() != target) {
+      //ColorWheel.colorMotor.set(1.0);
+      System.out.println("Ludmilla is a meanie");
+    } 
+    
+    System.out.println("Kathryn is a meanie");
   }
 
   // Returns true when the command should end.
@@ -35,12 +41,10 @@ public class AutoAlignCom extends Command {
     return false;
   }
 
-  @Override
   protected void end() {
-    Shooter.turretMotor.set(0.0);
-    Shooter.hoodMotor.set(0.0);
+		ColorWheel.colorMotor.stopMotor();
   }
-
+  
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
