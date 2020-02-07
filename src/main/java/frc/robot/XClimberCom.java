@@ -9,37 +9,33 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class AutoAlignCom extends Command {
-  public AutoAlignCom() {
+public class XClimberCom extends Command {
+  public XClimberCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called when the command is initially scheduled.
   @Override
-  protected void initialize() {
-    Limelight.setLiveStream(0);
-    Limelight.setLEDMode(3);
-  }
-
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  protected void execute() {
-    Limelight.rotateHorizontal();
-    Limelight.rotateVertical();
-  }
-
-  // Returns true when the command should end.
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
+  protected void initialize(){
+		Climb.climbEncoder.reset();
+	}
 
   @Override
-  protected void end() {
-    Shooter.turretMotor.set(0.0);
-    Shooter.hoodMotor.set(0.0);
-  }
+	protected void execute(){
+		Climb.start();
+		Climb.stop();
+	}
+
+  @Override
+	protected boolean isFinished(){
+		return false;
+	}
+
+  @Override
+	protected void end(){
+		Climb.down();
+	}
+
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run

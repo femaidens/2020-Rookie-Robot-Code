@@ -10,7 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.*;
-import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.command.Command;
 //import frc.robot.commands.*;
 
 
@@ -24,6 +24,8 @@ public class OI {
 	public static Button outtakeBall = new JoystickButton(joy,5);
     public static Button hood = new JoystickButton(joy,6);
     public static Button autoAlign = new JoystickButton(joy,7);
+    public static Button shiftGear = new JoystickButton(joy, 8);
+    public static Button driveTeleop = new JoystickButton(joy,9);
 
 
     public static void bindButtons() {
@@ -33,6 +35,8 @@ public class OI {
         intakeBall.whileHeld(new IntakeBallCom());
         outtakeBall.whileHeld(new OuttakeBallCom());
         autoAlign.whenPressed(new AutoAlignCom());
+        shiftGear.whenPressed(new SwitchGearCom());
+        driveTeleop.whenPressed(new DriveTeleopCom());
 
     }
 

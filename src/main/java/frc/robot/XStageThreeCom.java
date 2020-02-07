@@ -1,29 +1,37 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2019 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+//package frc.robot;
 package frc.robot;
 
-import edu.wpi.first.wpilibj.command.Command;
-import com.revrobotics.ColorSensorV3;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class StageThreeCom extends Command {
-  public StageThreeCom() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+import com.revrobotics.ColorSensorV3;
+//import com.revrobotics.ColorSensorV3.RawColor;
+//import frc.robot.Robot;
+//import frc.robot.subsystems.*;
+//import frc.robot.commands.*;
+
+public class XStageThreeCom extends CommandBase {
+  /**
+   * Creates a new StageThreeCom.
+   */
+  public XStageThreeCom() {
+    //requires(Robot.ColorWheel);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  protected void initialize() {
+  public void initialize() {
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  protected void execute() {
+  public void execute() {
     ColorSensorV3.RawColor target = ColorWheel.getTargetColor();
     while (ColorWheel.colorSensor.getRawColor() != target) {
       //ColorWheel.colorMotor.set(1.0);
@@ -33,19 +41,19 @@ public class StageThreeCom extends Command {
     System.out.println("Kathryn is a meanie");
   }
 
+  // Called once the command ends or is interrupted.
+  @Override
+  public void end(final boolean interrupted) {
+    //ColorWheel.colorMotor.set(0.0);
+  }
+
   // Returns true when the command should end.
   @Override
-  protected boolean isFinished() {
+  public boolean isFinished() {
     return false;
   }
 
   protected void end() {
 		ColorWheel.colorMotor.stopMotor();
-  }
-  
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
-  }
+	}
 }

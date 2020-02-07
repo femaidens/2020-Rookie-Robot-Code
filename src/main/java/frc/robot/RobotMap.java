@@ -42,6 +42,8 @@ public class RobotMap {
     public static int turretLimit2Port = 27;
     public static int hoodMotorPort = 28;
     public static int shooterMotorPort = 29;
+    public static int gearShiftPort1 = 30;
+    public static int gearShiftPort2 = 31;
 
 
 

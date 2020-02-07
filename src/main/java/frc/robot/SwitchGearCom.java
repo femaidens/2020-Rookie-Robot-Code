@@ -9,24 +9,21 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class AutoAlignCom extends Command {
-  public AutoAlignCom() {
+public class SwitchGearCom extends Command {
+  public SwitchGearCom() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called when the command is initially scheduled.
+  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Limelight.setLiveStream(0);
-    Limelight.setLEDMode(3);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    Limelight.rotateHorizontal();
-    Limelight.rotateVertical();
+    DriveTrain.switchGear();
   }
 
   // Returns true when the command should end.
@@ -37,8 +34,6 @@ public class AutoAlignCom extends Command {
 
   @Override
   protected void end() {
-    Shooter.turretMotor.set(0.0);
-    Shooter.hoodMotor.set(0.0);
   }
 
   // Called when another command which requires one or more of the same

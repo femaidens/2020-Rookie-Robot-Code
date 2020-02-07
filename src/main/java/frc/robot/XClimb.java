@@ -1,13 +1,15 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2019 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+//package edu.wpi.first.wpilibj;
+//package com.revrobotics;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -15,9 +17,12 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.Joystick;
 
-public class Climb extends Subsystem {
 
-  public Climb() {
+public class XClimb extends SubsystemBase {
+  /**
+   * Creates a new Climb.
+   */
+  public XClimb() {
 
   }
 
@@ -30,7 +35,7 @@ public class Climb extends Subsystem {
 
 	public static double distance;
 
-	//detects height range of climb bar in inches// 
+	  //detects height range of climb bar in inches// 
 	public static void start(){
 		if (ultra.getRangeInches() > 36 && ultra.getRangeInches() < 84) {
 			motor.set(1.0);
@@ -53,10 +58,8 @@ public class Climb extends Subsystem {
 		}
 		motor.stopMotor();
 	}
-
   @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+  public void periodic() {
+    // This method will be called once per scheduler run
   }
 }

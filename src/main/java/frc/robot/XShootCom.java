@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2019 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -7,39 +7,38 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class OuttakeBallCom extends Command {
-  public OuttakeBallCom() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+public class XShootCom extends CommandBase {
+  /**
+   * Creates a new ShootCom.
+   */
+  public XShootCom() {
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
-  protected void initialize() {
+  public void initialize() {
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  protected void execute() {
-    Shooter.outtakeBall();
+  public void execute() {
+    Shooter.shoot();
+  }
+
+  // Called once the command ends or is interrupted.
+  @Override
+  public void end(boolean interrupted) {
   }
 
   // Returns true when the command should end.
   @Override
-  protected boolean isFinished() {
+  public boolean isFinished() {
     return false;
   }
 
   protected void end() {
-    Shooter.ballMotor.set(0.0);
-	  Shooter.foldMotor.set(0.0);
-  }
-  
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
   }
 }
