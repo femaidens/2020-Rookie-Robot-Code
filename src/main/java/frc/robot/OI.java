@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.AdjustHoodCom;
 import frc.robot.commands.AutoAlignCom;
 import frc.robot.commands.DriveTeleopCom;
 import frc.robot.commands.IntakeBallCom;
@@ -45,6 +46,7 @@ public class OI {
         autoAlign.whenPressed(new AutoAlignCom());
         shiftGear.whenPressed(new SwitchGearCom());
         driveTeleop.whenPressed(new DriveTeleopCom());
+        hood.whenPressed(new AdjustHoodCom(0));
 
     }
 

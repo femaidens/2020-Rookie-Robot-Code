@@ -44,6 +44,7 @@ public class RobotMap {
     public static int shooterMotorPort = 29;
     public static int gearShiftPort1 = 30;
     public static int gearShiftPort2 = 31;
+    public static int absEncoderPort = 32;
 
 
 

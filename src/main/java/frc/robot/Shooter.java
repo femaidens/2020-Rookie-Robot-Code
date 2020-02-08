@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.revrobotics.CANSparkMax;
 import edu.wpi.first.wpilibj.DigitalInput;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import edu.wpi.first.wpilibj.DutyCycleEncoder;
 
 /**
  * Add your docs here.
@@ -38,7 +39,8 @@ public class Shooter extends Subsystem {
 
     //shooter instantiations
     public static CANSparkMax hoodMotor = new CANSparkMax(RobotMap.hoodMotorPort,MotorType.kBrushless);
-    public static CANSparkMax shooterMotor = new CANSparkMax(RobotMap.shooterMotorPort,MotorType.kBrushless);   
+    public static CANSparkMax shooterMotor = new CANSparkMax(RobotMap.shooterMotorPort,MotorType.kBrushless);  
+    public static DutyCycleEncoder absEncoder = new DutyCycleEncoder(RobotMap.absEncoderPort); 
 
     public Shooter() {
     }
@@ -84,6 +86,16 @@ public class Shooter extends Subsystem {
     // shooter
     public static void shoot(){
         shooterMotor.set(1.0);
+    }
+
+    public static void adjustHood(int desiredTicks) {
+        while (absEncoder.getDistance() != desiredTicks) {
+            if (absEncoder.getDistance() < desiredTicks) {
+                hoodMotor.set(0.5);
+            } else {
+                hoodMotor.set(-0.5);
+            }
+        }
     }
 
 
