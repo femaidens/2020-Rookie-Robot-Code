@@ -34,14 +34,14 @@ public class DriveTrain extends Subsystem {
 
 	public static Joystick joy = new Joystick(RobotMap.joyPort);
 
-	public static CANEncoder rightEncoder = new CANEncoder(frontRight);
-	public static CANEncoder leftEncoder = new CANEncoder(frontLeft);
+	public static CANEncoder rightEncoder = frontRight.getEncoder();
+	public static CANEncoder leftEncoder = frontLeft.getEncoder();
 
-  public static AnalogGyro gyro = new AnalogGyro(RobotMap.gyroPort);
+ // public static AnalogGyro gyro = new AnalogGyro(RobotMap.gyroPort);
     
-  public static DoubleSolenoid gearShift = new DoubleSolenoid(RobotMap.gearShiftPort1, RobotMap.gearShiftPort2);
+ // public static DoubleSolenoid gearShift = new DoubleSolenoid(RobotMap.gearShiftPort1, RobotMap.gearShiftPort2);
     
-  public static double time = 3;
+  //public static double time = 3;
 
 	      public DriveTrain() {
         }
@@ -55,14 +55,17 @@ public class DriveTrain extends Subsystem {
             frontLeft.set(leftJoy);
             rearLeft.set(leftJoy);
             middleLeft.set(leftJoy);
+            /*
             frontRight.setClosedLoopRampRate(time);
 	          frontLeft.setClosedLoopRampRate(time);
 	          rearRight.setClosedLoopRampRate(time);
             rearLeft.setClosedLoopRampRate(time);
             middleLeft.setClosedLoopRampRate(time);
             middleRight.setClosedLoopRampRate(time);
+            */
         }
     
+        /*
         public static void driveAuton (double l, double r) {
             frontRight.set(r);
             middleRight.set(r);
@@ -80,6 +83,7 @@ public class DriveTrain extends Subsystem {
                 gearShift.set(DoubleSolenoid.Value.kReverse);
             }
         }
+        */
         
   @Override
   public void initDefaultCommand() {

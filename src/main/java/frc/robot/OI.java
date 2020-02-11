@@ -26,7 +26,8 @@ import edu.wpi.first.wpilibj.buttons.*;
 public class OI {
 
     public static Joystick joy = new Joystick(RobotMap.joyPort);
-    public static Button two = new JoystickButton(joy,1);
+    /*
+    public static Button two = new JoystickButton(joy,11);
     public static Button three = new JoystickButton(joy,2);
     public static Button shoot = new JoystickButton(joy,3);
 	public static Button intakeBall = new JoystickButton(joy,4);
@@ -35,9 +36,12 @@ public class OI {
     public static Button autoAlign = new JoystickButton(joy,7);
     public static Button shiftGear = new JoystickButton(joy, 8);
     public static Button driveTeleop = new JoystickButton(joy,9);
-
+    */
+    public static Button drive = new JoystickButton(joy,1);
 
     public static void bindButtons() {
+        drive.toggleWhenPressed(new DriveStraightCom(80.0));
+       /*
         two.whenPressed(new StageTwoCom());
         three.whenPressed(new StageThreeCom());
         shoot.whileHeld(new ShootCom());
@@ -47,6 +51,7 @@ public class OI {
         shiftGear.whenPressed(new SwitchGearCom());
         driveTeleop.whenPressed(new DriveTeleopCom());
         hood.whenPressed(new AdjustHoodCom(0));
+        */
 
     }
 

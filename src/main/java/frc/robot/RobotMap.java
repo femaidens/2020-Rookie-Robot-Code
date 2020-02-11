@@ -23,7 +23,7 @@ public class RobotMap {
     public static int climbEncoderPortA = 5;
     public static int climbEncoderPortB = 8;
     public static int motorPort = 6;
-    public static int joyPort = 9;
+    public static int joyPort = 0;
     public static int frontLeftPort = 10;
     public static int rearLeftPort = 11;
     public static int middleLeftPort = 12;
@@ -45,6 +45,7 @@ public class RobotMap {
     public static int gearShiftPort1 = 30;
     public static int gearShiftPort2 = 31;
     public static int absEncoderPort = 32;
+
 
 
 

@@ -17,6 +17,8 @@ import edu.wpi.first.wpilibj.DutyCycleEncoder;
 /**
  * Add your docs here.
  */
+
+ /*
 public class Shooter extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
@@ -105,3 +107,4 @@ public class Shooter extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 }
+*/

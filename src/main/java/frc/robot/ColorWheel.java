@@ -4,7 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-
+/*
 package frc.robot;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -15,9 +15,10 @@ import com.revrobotics.ColorSensorV3;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.revrobotics.ColorSensorV3.RawColor;
 import frc.robot.RobotMap;
-/**
  * Add your docs here.
  */
+
+ /*
 public class ColorWheel extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
@@ -68,3 +69,4 @@ public class ColorWheel extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 }
+*/

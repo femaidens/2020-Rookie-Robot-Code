@@ -4,7 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-
+/*
 package frc.robot;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -60,3 +60,4 @@ public class Climb extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 }
+*/
