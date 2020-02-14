@@ -15,7 +15,7 @@ public class AdjustHoodCom extends Command {
   public int desiredTicks;
   public AdjustHoodCom(int ticks) {
     // Use requires() here to declare subsystem dependencies
-    desiredTicks=ticks;
+    //desiredTicks=ticks;
 
     // eg. requires(chassis);
   }
@@ -28,7 +28,11 @@ public class AdjustHoodCom extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+<<<<<<< HEAD
     //Shooter.adjustHood(desiredTicks);
+=======
+   // Shooter.adjustHood(desiredTicks);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,7 +44,11 @@ public class AdjustHoodCom extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+<<<<<<< HEAD
    // Shooter.hoodMotor.set(0.0);
+=======
+    //Shooter.hoodMotor.set(0.0);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
   }
 
   // Called when another command which requires one or more of the same
@@ -49,3 +57,4 @@ public class AdjustHoodCom extends Command {
   protected void interrupted() {
   }
 }
+

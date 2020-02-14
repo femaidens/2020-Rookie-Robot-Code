@@ -14,11 +14,19 @@ import edu.wpi.first.wpilibj.I2C;
  */
 public class RobotMap {
 
+<<<<<<< HEAD
     public static int colorMotorPort = 100;
     public static int colorSensorPort = 98;
     public static int DigitalInputPort1 = 99;
     public static int DigitalInputPort2 = 3;
     public static int UltrasonicPingPort = 44;
+=======
+    public static int colorMotorPort = 0;
+    public static int colorSensorPort = 1000;
+    public static int DigitalInputPort1 = 2000;
+    public static int DigitalInputPort2 = 3;
+    public static int UltrasonicPingPort = 40000;
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     public static int UltrasonicEchoPort = 7;
     public static int climbEncoderPortA = 5;
     public static int climbEncoderPortB = 8;
@@ -45,6 +53,7 @@ public class RobotMap {
     public static int gearShiftPort1 = 30;
     public static int gearShiftPort2 = 31;
     public static int absEncoderPort = 32;
+
 
 
 

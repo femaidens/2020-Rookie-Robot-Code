@@ -26,7 +26,12 @@ import edu.wpi.first.wpilibj.buttons.*;
 public class OI {
 
     public static Joystick joy = new Joystick(RobotMap.joyPort);
+<<<<<<< HEAD
     /*public static Button two = new JoystickButton(joy,1);
+=======
+    /*
+    public static Button two = new JoystickButton(joy,11);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     public static Button three = new JoystickButton(joy,2);
     public static Button shoot = new JoystickButton(joy,3);
 	public static Button intakeBall = new JoystickButton(joy,4);
@@ -36,9 +41,21 @@ public class OI {
     public static Button shiftGear = new JoystickButton(joy, 8);
     public static Button driveTeleop = new JoystickButton(joy,9);
     */
+<<<<<<< HEAD
 
     public static void bindButtons() {
       /*  two.whenPressed(new StageTwoCom());
+=======
+    public static Button drive = new JoystickButton(joy,0);
+
+    public OI() {
+    }
+    
+    public static void bindButtons() {
+        drive.toggleWhenPressed(new DriveStraightCom(80.0));
+       /*
+        two.whenPressed(new StageTwoCom());
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
         three.whenPressed(new StageThreeCom());
         shoot.whileHeld(new ShootCom());
         intakeBall.whileHeld(new IntakeBallCom());
@@ -47,7 +64,12 @@ public class OI {
         shiftGear.whenPressed(new SwitchGearCom());
         driveTeleop.whenPressed(new DriveTeleopCom());
         hood.whenPressed(new AdjustHoodCom(0));
+<<<<<<< HEAD
 */
+=======
+        */
+
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     }
 
 }

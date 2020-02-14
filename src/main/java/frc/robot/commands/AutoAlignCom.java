@@ -5,6 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -20,14 +21,22 @@ public class AutoAlignCom extends Command {
   // Called when the command is initially scheduled.
   @Override
   protected void initialize() {
+<<<<<<< HEAD
     //Limelight.setLiveStream(0);
+=======
+   // Limelight.setLiveStream(0);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     //Limelight.setLEDMode(3);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
+<<<<<<< HEAD
     //Limelight.rotateHorizontal();
+=======
+   // Limelight.rotateHorizontal();
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     //Limelight.rotateVertical();
   }
 

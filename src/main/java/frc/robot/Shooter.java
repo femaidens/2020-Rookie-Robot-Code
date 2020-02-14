@@ -17,13 +17,19 @@ import edu.wpi.first.wpilibj.DutyCycleEncoder;
 /**
  * Add your docs here.
  */
+
+ 
 public class Shooter extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   //draft code for the limelight part (look at last year's github, ask us, etc.)
     // intake instantiations
+<<<<<<< HEAD
     /*public static CANSparkMax foldMotor = new CANSparkMax(RobotMap.foldMotorPort,MotorType.kBrushless);
+=======
+  /*  public static CANSparkMax foldMotor = new CANSparkMax(RobotMap.foldMotorPort,MotorType.kBrushless);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     public static CANSparkMax ballMotor = new CANSparkMax(RobotMap.intakeMotorPort,MotorType.kBrushless);
     public static DigitalInput foldLimit = new DigitalInput(RobotMap.foldLimitPort);
 
@@ -54,27 +60,42 @@ public class Shooter extends Subsystem {
     /*    while(foldLimit.get() != true){
             foldMotor.set(-1.0);
         }
+<<<<<<< HEAD
         foldMotor.set(0.0);
     */
+=======
+        foldMotor.set(0.0);*/
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     }
 
     //outtake 
     public static void outtakeBall() {
+<<<<<<< HEAD
       //  ballMotor.set(-1.0);
         //foldMotor.set(1.0);
+=======
+        //ballMotor.set(-1.0);
+    //    foldMotor.set(1.0);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     }
 
     // hopper
     public static void moveBeltIn() {
-        int countVar = 0;
+      /*  int countVar = 0;
         if (countVar < 5) {
           //  hopperMotor1.set(1.0);
             //hopperMotor2.set(1.0);
             countVar++;
         } else {
+<<<<<<< HEAD
             //hopperMotor1.set(0.0);
             //hopperMotor2.set(0.0);
         }
+=======
+            hopperMotor1.set(0.0);
+            hopperMotor2.set(0.0);
+        }*/
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     }
     
     // turret

@@ -34,35 +34,61 @@ public class DriveTrain extends Subsystem {
 	public static CANSparkMax middleLeft = new CANSparkMax(RobotMap.middleLeftPort,  MotorType.kBrushless);
 	public static CANSparkMax middleRight = new CANSparkMax(RobotMap.middleRightPort,  MotorType.kBrushless);
 
+<<<<<<< HEAD
 	//public static CANEncoder rightEncoder = new CANEncoder(frontRight);
 	//public static CANEncoder leftEncoder = new CANEncoder(frontLeft);
 
   //public static AnalogGyro gyro = new AnalogGyro(RobotMap.gyroPort);
     
   //public static DoubleSolenoid gearShift = new DoubleSolenoid(RobotMap.gearShiftPort1, RobotMap.gearShiftPort2);
+=======
+	public static CANEncoder rightEncoder = frontRight.getEncoder();
+	public static CANEncoder leftEncoder = frontLeft.getEncoder();
+
+ // public static AnalogGyro gyro = new AnalogGyro(RobotMap.gyroPort);
     
-  public static double time = 3;
+ // public static DoubleSolenoid gearShift = new DoubleSolenoid(RobotMap.gearShiftPort1, RobotMap.gearShiftPort2);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
+    
+  //public static double time = 3;
 
 	      public DriveTrain() {
         }
 
         public static void driveJoy() {
+<<<<<<< HEAD
             double leftJoy = -OI.joy.getRawAxis(0);
             double rightJoy = OI.joy.getRawAxis(5);
+=======
+            double leftJoy = OI.joy.getRawAxis(0);
+            double rightJoy = OI.joy.getRawAxis(1);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
             frontRight.set(rightJoy);
             rearRight.set(rightJoy);
             middleRight.set(rightJoy);
             frontLeft.set(leftJoy);
             rearLeft.set(leftJoy);
             middleLeft.set(leftJoy);
+<<<<<<< HEAD
             /*frontRight.setClosedLoopRampRate(time);
+=======
+            System.out.println("pls drive");
+            /*
+            frontRight.setClosedLoopRampRate(time);
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
 	          frontLeft.setClosedLoopRampRate(time);
 	          rearRight.setClosedLoopRampRate(time);
             rearLeft.setClosedLoopRampRate(time);
             middleLeft.setClosedLoopRampRate(time);
+<<<<<<< HEAD
             middleRight.setClosedLoopRampRate(time);*/
+=======
+            middleRight.setClosedLoopRampRate(time);
+            */
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
         }
     
+        /*
         public static void driveAuton (double l, double r) {
             frontRight.set(r);
             middleRight.set(r);
@@ -79,13 +105,24 @@ public class DriveTrain extends Subsystem {
             else{
                 gearShift.set(DoubleSolenoid.Value.kReverse);
             }
+<<<<<<< HEAD
         */
           }
+=======
+        }
+        */
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
         
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
+<<<<<<< HEAD
     setDefaultCommand(new DriveTeleopCom());
 
+=======
+    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new DriveTeleop());
+    System.out.println("teleopping");
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
   }
 }

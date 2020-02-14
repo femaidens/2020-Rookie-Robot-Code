@@ -18,19 +18,23 @@ public class IntakeBallCom extends Command {
 
   // Called when the command is initially scheduled.
   @Override
-  protected void initialize() {
+    protected void initialize() {
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    int sensorVar = 0;
+    /*int sensorVar = 0;
     if (sensorVar < 5) {
       //Shooter.intakeBall();
     } else {
       //Shooter.fold();
     }
+<<<<<<< HEAD
     //Shooter.moveBeltIn();  
+=======
+    Shooter.moveBeltIn();*/
+>>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
   }
 
   // Returns true when the command should end.
