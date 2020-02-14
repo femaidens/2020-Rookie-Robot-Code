@@ -24,7 +24,7 @@ public class SwitchGearCom extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    DriveTrain.switchGear();
+    //DriveTrain.switchGear();
   }
 
   // Returns true when the command should end.

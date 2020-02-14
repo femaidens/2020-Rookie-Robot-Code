@@ -37,8 +37,11 @@ public class OI {
     public static Button shiftGear = new JoystickButton(joy, 8);
     public static Button driveTeleop = new JoystickButton(joy,9);
     */
-    public static Button drive = new JoystickButton(joy,1);
+    public static Button drive = new JoystickButton(joy,0);
 
+    public OI() {
+    }
+    
     public static void bindButtons() {
         drive.toggleWhenPressed(new DriveStraightCom(80.0));
        /*

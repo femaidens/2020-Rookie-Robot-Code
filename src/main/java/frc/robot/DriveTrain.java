@@ -32,8 +32,6 @@ public class DriveTrain extends Subsystem {
 	public static CANSparkMax middleLeft = new CANSparkMax(RobotMap.middleLeftPort,  MotorType.kBrushless);
 	public static CANSparkMax middleRight = new CANSparkMax(RobotMap.middleRightPort,  MotorType.kBrushless);
 
-	public static Joystick joy = new Joystick(RobotMap.joyPort);
-
 	public static CANEncoder rightEncoder = frontRight.getEncoder();
 	public static CANEncoder leftEncoder = frontLeft.getEncoder();
 
@@ -47,14 +45,15 @@ public class DriveTrain extends Subsystem {
         }
 
         public static void driveJoy() {
-            double leftJoy = joy.getRawAxis(1);
-            double rightJoy = joy.getRawAxis(2);
+            double leftJoy = OI.joy.getRawAxis(0);
+            double rightJoy = OI.joy.getRawAxis(1);
             frontRight.set(rightJoy);
             rearRight.set(rightJoy);
             middleRight.set(rightJoy);
             frontLeft.set(leftJoy);
             rearLeft.set(leftJoy);
             middleLeft.set(leftJoy);
+            System.out.println("pls drive");
             /*
             frontRight.setClosedLoopRampRate(time);
 	          frontLeft.setClosedLoopRampRate(time);
@@ -89,5 +88,7 @@ public class DriveTrain extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new DriveTeleop());
+    System.out.println("teleopping");
   }
 }

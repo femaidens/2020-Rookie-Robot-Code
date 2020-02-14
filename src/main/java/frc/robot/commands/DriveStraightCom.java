@@ -16,31 +16,31 @@ public class DriveStraightCom extends Command {
 
 	public DriveStraightCom(int ticks) {
 		//requires(Robot.drivetrain);
-		desiredTicks = ticks;
+		//desiredTicks = ticks;
 	}
 
   @Override
 	protected void initialize() {
-		DriveTrain.rightEncoder.reset();
-		DriveTrain.leftEncoder.reset();
+		//DriveTrain.rightEncoder.setPosition(0.0);
+		//DriveTrain.leftEncoder.setPosition(0.0);
 	}
 
 
   @Override
 	protected void execute() {
-		DriveTrain.frontRight.set(0.10);
+		/*DriveTrain.frontRight.set(0.10);
 		DriveTrain.frontLeft.set(0.10);
 		DriveTrain.rearRight.set(0.10);
 		DriveTrain.rearLeft.set(0.10);
 		
-		if (leftEncoder.get() < desiredTicks && rightEncoder.get() < desiredTicks) {
+		if (leftEncoder.getPosition() < desiredTicks && rightEncoder.get() < desiredTicks) {
 			if (leftEncoder.get() < rightEncoder.get()){
 				DriveTrain.frontRight.set(0.1);
 				DriveTrain.rearRight.set(0.1);
 				DriveTrain.frontLeft.set(0.15);
 				DriveTrain.rearLeft.set(0.15);
 			}
-			else if (leftEncoder.get() > rightEncoder.get()){
+			else if (leftEncoder.getPosition() > rightEncoder.get()){
 				DriveTrain.frontRight.set(0.15);
 				DriveTrain.rearRight.set(0.15);
 				DriveTrain.frontLeft.set(0.1);
@@ -53,7 +53,7 @@ public class DriveStraightCom extends Command {
 				DriveTrain.rearLeft.set(0.1);
 
 			}
-		}
+		}*/
     }
 
   @Override
@@ -63,8 +63,8 @@ public class DriveStraightCom extends Command {
 
   @Override
 	protected void end() {
-		DriveTrain.leftEncoder.reset();
-		DriveTrain.rightEncoder.reset();
+		//DriveTrain.leftEncoder.reset();
+		//DriveTrain.rightEncoder.reset();
   	}
   
 	@Override
