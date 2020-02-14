@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.commands.DriveTeleopCom;
+
 import com.revrobotics.CANEncoder;
 import edu.wpi.first.wpilibj.Joystick;
 
@@ -32,14 +34,12 @@ public class DriveTrain extends Subsystem {
 	public static CANSparkMax middleLeft = new CANSparkMax(RobotMap.middleLeftPort,  MotorType.kBrushless);
 	public static CANSparkMax middleRight = new CANSparkMax(RobotMap.middleRightPort,  MotorType.kBrushless);
 
-	public static Joystick joy = new Joystick(RobotMap.joyPort);
+	//public static CANEncoder rightEncoder = new CANEncoder(frontRight);
+	//public static CANEncoder leftEncoder = new CANEncoder(frontLeft);
 
-	public static CANEncoder rightEncoder = new CANEncoder(frontRight);
-	public static CANEncoder leftEncoder = new CANEncoder(frontLeft);
-
-  public static AnalogGyro gyro = new AnalogGyro(RobotMap.gyroPort);
+  //public static AnalogGyro gyro = new AnalogGyro(RobotMap.gyroPort);
     
-  public static DoubleSolenoid gearShift = new DoubleSolenoid(RobotMap.gearShiftPort1, RobotMap.gearShiftPort2);
+  //public static DoubleSolenoid gearShift = new DoubleSolenoid(RobotMap.gearShiftPort1, RobotMap.gearShiftPort2);
     
   public static double time = 3;
 
@@ -47,20 +47,20 @@ public class DriveTrain extends Subsystem {
         }
 
         public static void driveJoy() {
-            double leftJoy = joy.getRawAxis(1);
-            double rightJoy = joy.getRawAxis(2);
+            double leftJoy = -OI.joy.getRawAxis(0);
+            double rightJoy = OI.joy.getRawAxis(5);
             frontRight.set(rightJoy);
             rearRight.set(rightJoy);
             middleRight.set(rightJoy);
             frontLeft.set(leftJoy);
             rearLeft.set(leftJoy);
             middleLeft.set(leftJoy);
-            frontRight.setClosedLoopRampRate(time);
+            /*frontRight.setClosedLoopRampRate(time);
 	          frontLeft.setClosedLoopRampRate(time);
 	          rearRight.setClosedLoopRampRate(time);
             rearLeft.setClosedLoopRampRate(time);
             middleLeft.setClosedLoopRampRate(time);
-            middleRight.setClosedLoopRampRate(time);
+            middleRight.setClosedLoopRampRate(time);*/
         }
     
         public static void driveAuton (double l, double r) {
@@ -73,17 +73,19 @@ public class DriveTrain extends Subsystem {
         }
         
         public static void switchGear(){
-            if(gearShift.get()==DoubleSolenoid.Value.kReverse){
+    /*        if(gearShift.get()==DoubleSolenoid.Value.kReverse){
                 gearShift.set(DoubleSolenoid.Value.kForward);
             }
             else{
                 gearShift.set(DoubleSolenoid.Value.kReverse);
             }
-        }
+        */
+          }
         
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new DriveTeleopCom());
+
   }
 }

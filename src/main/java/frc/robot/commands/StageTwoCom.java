@@ -19,13 +19,13 @@ public class StageTwoCom extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    ColorWheel.getInitialColor();
+    //ColorWheel.getInitialColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    ColorWheel.spinTwo();
+ //   ColorWheel.spinTwo();
   }
 
   // Returns true when the command should end.
@@ -36,7 +36,7 @@ public class StageTwoCom extends Command {
   
   @Override
   protected void end() {
-    ColorWheel.colorMotor.stopMotor();
+    //ColorWheel.colorMotor.stopMotor();
   }
 
   @Override

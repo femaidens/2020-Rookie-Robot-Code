@@ -26,11 +26,11 @@ public class StageThreeCom extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    ColorSensorV3.RawColor target = ColorWheel.getTargetColor();
-    while (ColorWheel.colorSensor.getRawColor() != target) {
+    //ColorSensorV3.RawColor target = ColorWheel.getTargetColor();
+    /*while (ColorWheel.colorSensor.getRawColor() != target) {
       //ColorWheel.colorMotor.set(1.0);
       System.out.println("Ludmilla is a meanie");
-    } 
+    } */
     
     System.out.println("Kathryn is a meanie");
   }
@@ -42,7 +42,7 @@ public class StageThreeCom extends Command {
   }
 
   protected void end() {
-		ColorWheel.colorMotor.stopMotor();
+		//ColorWheel.colorMotor.stopMotor();
   }
   
   // Called when another command which requires one or more of the same

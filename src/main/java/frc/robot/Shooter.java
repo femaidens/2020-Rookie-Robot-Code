@@ -23,7 +23,7 @@ public class Shooter extends Subsystem {
 
   //draft code for the limelight part (look at last year's github, ask us, etc.)
     // intake instantiations
-    public static CANSparkMax foldMotor = new CANSparkMax(RobotMap.foldMotorPort,MotorType.kBrushless);
+    /*public static CANSparkMax foldMotor = new CANSparkMax(RobotMap.foldMotorPort,MotorType.kBrushless);
     public static CANSparkMax ballMotor = new CANSparkMax(RobotMap.intakeMotorPort,MotorType.kBrushless);
     public static DigitalInput foldLimit = new DigitalInput(RobotMap.foldLimitPort);
 
@@ -41,61 +41,62 @@ public class Shooter extends Subsystem {
     public static CANSparkMax hoodMotor = new CANSparkMax(RobotMap.hoodMotorPort,MotorType.kBrushless);
     public static CANSparkMax shooterMotor = new CANSparkMax(RobotMap.shooterMotorPort,MotorType.kBrushless);  
     public static DutyCycleEncoder absEncoder = new DutyCycleEncoder(RobotMap.absEncoderPort); 
-
+*/
     public Shooter() {
     }
 
     // intake 
     public static void intakeBall(){
-        ballMotor.set(1.0);
+  //      ballMotor.set(1.0);
     }
 
     public static void fold(){
-        while(foldLimit.get() != true){
+    /*    while(foldLimit.get() != true){
             foldMotor.set(-1.0);
         }
         foldMotor.set(0.0);
+    */
     }
 
     //outtake 
     public static void outtakeBall() {
-        ballMotor.set(-1.0);
-        foldMotor.set(1.0);
+      //  ballMotor.set(-1.0);
+        //foldMotor.set(1.0);
     }
 
     // hopper
     public static void moveBeltIn() {
         int countVar = 0;
         if (countVar < 5) {
-            hopperMotor1.set(1.0);
-            hopperMotor2.set(1.0);
+          //  hopperMotor1.set(1.0);
+            //hopperMotor2.set(1.0);
             countVar++;
         } else {
-            hopperMotor1.set(0.0);
-            hopperMotor2.set(0.0);
+            //hopperMotor1.set(0.0);
+            //hopperMotor2.set(0.0);
         }
     }
     
     // turret
     public static void turret() {
-        while (turretRightLimit.get() == true || turretLeftLimit.get() == true) {
+        /*while (turretRightLimit.get() == true || turretLeftLimit.get() == true) {
             turretMotor.set(0.0);
-        }
+        }*/
     }
 
     // shooter
     public static void shoot(){
-        shooterMotor.set(1.0);
+        //shooterMotor.set(1.0);
     }
 
     public static void adjustHood(int desiredTicks) {
-        while (absEncoder.getDistance() != desiredTicks) {
+        /*while (absEncoder.getDistance() != desiredTicks) {
             if (absEncoder.getDistance() < desiredTicks) {
                 hoodMotor.set(0.5);
             } else {
                 hoodMotor.set(-0.5);
             }
-        }
+        }*/
     }
 
 

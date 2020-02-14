@@ -24,7 +24,7 @@ public class ShootCom extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    Shooter.shoot();
+    //Shooter.shoot();
   }
 
   // Returns true when the command should end.

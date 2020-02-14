@@ -24,7 +24,7 @@ public class OuttakeBallCom extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   protected void execute() {
-    Shooter.outtakeBall();
+    //Shooter.outtakeBall();
   }
 
   // Returns true when the command should end.
@@ -34,8 +34,8 @@ public class OuttakeBallCom extends Command {
   }
 
   protected void end() {
-    Shooter.ballMotor.set(0.0);
-	  Shooter.foldMotor.set(0.0);
+    //Shooter.ballMotor.set(0.0);
+	  //Shooter.foldMotor.set(0.0);
   }
   
   // Called when another command which requires one or more of the same

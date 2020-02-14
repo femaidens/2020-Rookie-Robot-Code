@@ -18,13 +18,13 @@ public class ClimberCom extends Command {
 
   @Override
   protected void initialize(){
-		Climb.climbEncoder.reset();
+//		Climb.climbEncoder.reset();
 	}
 
   @Override
 	protected void execute(){
-		Climb.start();
-		Climb.stop();
+		//Climb.start();
+		//Climb.stop();
 	}
 
   @Override
@@ -34,7 +34,7 @@ public class ClimberCom extends Command {
 
   @Override
 	protected void end(){
-		Climb.down();
+		//Climb.down();
   }
 
   // Called when another command which requires one or more of the same

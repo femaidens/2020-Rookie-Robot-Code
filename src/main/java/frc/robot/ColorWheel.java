@@ -26,18 +26,18 @@ public class ColorWheel extends Subsystem {
 
   }
   
-  public static CANSparkMax colorMotor = new CANSparkMax(RobotMap.colorMotorPort,MotorType.kBrushless);
-  public static ColorSensorV3 colorSensor = new ColorSensorV3(RobotMap.i2cPort);
+  //public static CANSparkMax colorMotor = new CANSparkMax(RobotMap.colorMotorPort,MotorType.kBrushless);
+  //public static ColorSensorV3 colorSensor = new ColorSensorV3(RobotMap.i2cPort);
 
     //gets initial color RGB values//
-  public static ColorSensorV3.RawColor getInitialColor() {
-    ColorSensorV3.RawColor color = colorSensor.getRawColor();
+  /*public static ColorSensorV3.RawColor getInitialColor() {
+    //ColorSensorV3.RawColor color = colorSensor.getRawColor();
     return color;
-  }
+  }*/
 
     // spins wheel 4 revolutions (stage 2)//
   public static void spinTwo(){
-      int count = 0;
+    /*  int count = 0;
       while (count < 8) {
         colorMotor.set(1.0);
         if (colorSensor.getRawColor() == getInitialColor()) {
@@ -45,11 +45,12 @@ public class ColorWheel extends Subsystem {
         }
       }
       colorMotor.set(0.);
-  }
+  */
+    }
 
     // stage 3
-  public static ColorSensorV3.RawColor getTargetColor() {
-    final String gameData = DriverStation.getInstance().getGameSpecificMessage();
+  //public static ColorSensorV3.RawColor getTargetColor() {
+    /*final String gameData = DriverStation.getInstance().getGameSpecificMessage();
     if (gameData == "B"){
       return new RawColor(255,0,0,0);
     } else if (gameData.equals("R")){
@@ -60,7 +61,8 @@ public class ColorWheel extends Subsystem {
       return new RawColor(255,255,0,0);
     }
     return new RawColor(0,0,0,0);
-  }
+  */
+  //}
   
   @Override
   public void initDefaultCommand() {

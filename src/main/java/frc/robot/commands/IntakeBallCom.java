@@ -26,11 +26,11 @@ public class IntakeBallCom extends Command {
   protected void execute() {
     int sensorVar = 0;
     if (sensorVar < 5) {
-      Shooter.intakeBall();
+      //Shooter.intakeBall();
     } else {
-      Shooter.fold();
+      //Shooter.fold();
     }
-    Shooter.moveBeltIn();  
+    //Shooter.moveBeltIn();  
   }
 
   // Returns true when the command should end.
@@ -41,8 +41,8 @@ public class IntakeBallCom extends Command {
 
   @Override
   protected void end() {
-    Shooter.ballMotor.set(0.0);
-	  Shooter.foldMotor.set(0.0);
+    //Shooter.ballMotor.set(0.0);
+	  //Shooter.foldMotor.set(0.0);
 
   }
 
