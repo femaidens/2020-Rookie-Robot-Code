@@ -37,9 +37,9 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
+    drivetrain = new DriveTrain();
     m_oi = new OI();
     m_oi.bindButtons();
-    drivetrain = new DriveTrain();
   }
 
   /**

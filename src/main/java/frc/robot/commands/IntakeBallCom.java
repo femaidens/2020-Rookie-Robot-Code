@@ -30,11 +30,7 @@ public class IntakeBallCom extends Command {
     } else {
       //Shooter.fold();
     }
-<<<<<<< HEAD
-    //Shooter.moveBeltIn();  
-=======
-    Shooter.moveBeltIn();*/
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
+    //Shooter.moveBeltIn(); */ 
   }
 
   // Returns true when the command should end.

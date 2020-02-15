@@ -21,11 +21,7 @@ public class Climb extends Subsystem {
 
   }
 
-<<<<<<< HEAD
   /*	public static DigitalInput limitBottom = new DigitalInput(RobotMap.DigitalInputPort1);
-=======
-  	/*public static DigitalInput limitBottom = new DigitalInput(RobotMap.DigitalInputPort1);
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
 	public static DigitalInput limitTop = new DigitalInput(RobotMap.DigitalInputPort2);
 	public static Ultrasonic ultra = new Ultrasonic(RobotMap.UltrasonicPingPort,RobotMap.UltrasonicEchoPort);
 	public static Encoder climbEncoder = new Encoder(RobotMap.climbEncoderPortA,RobotMap.climbEncoderPortB);
@@ -36,11 +32,7 @@ public class Climb extends Subsystem {
 */
 	//detects height range of climb bar in inches// 
 	public static void start(){
-<<<<<<< HEAD
 	/*	if (ultra.getRangeInches() > 36 && ultra.getRangeInches() < 84) {
-=======
-		/*if (ultra.getRangeInches() > 36 && ultra.getRangeInches() < 84) {
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
 			motor.set(1.0);
       		distance = climbEncoder.getDistance();
 		}else{
@@ -59,12 +51,8 @@ public class Climb extends Subsystem {
 		while (climbEncoder.getDistance() < distance) {
 			motor.set(joy.getRawAxis(1));
 		}
-<<<<<<< HEAD
 		motor.stopMotor();
 	*/
-=======
-		motor.stopMotor();*/
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
 	}
 
   @Override

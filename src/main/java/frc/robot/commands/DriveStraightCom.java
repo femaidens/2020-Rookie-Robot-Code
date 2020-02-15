@@ -9,51 +9,71 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.DriveTrain;
+import frc.robot.Robot;
 
 public class DriveStraightCom extends Command {
 	
-	double desiredTicks;
+	public int desiredTicks;
+	public double speed;
+	public double adjustSpeed;
 
-	public DriveStraightCom(int ticks) {
-		//requires(Robot.drivetrain);
-		//desiredTicks = ticks;
+	public DriveStraightCom(int ticks, double speedInput, double adjust) {
+		requires(Robot.drivetrain);
+		desiredTicks = ticks;
+		speed = speedInput;
+		adjustSpeed = adjust;
 	}
 
   @Override
 	protected void initialize() {
-		//DriveTrain.rightEncoder.setPosition(0.0);
-		//DriveTrain.leftEncoder.setPosition(0.0);
+		DriveTrain.rightEncoder.setPosition(0.0);
+		DriveTrain.leftEncoder.setPosition(0.0);
 	}
 
 
   @Override
 	protected void execute() {
-		/*DriveTrain.frontRight.set(0.10);
-		DriveTrain.frontLeft.set(0.10);
-		DriveTrain.rearRight.set(0.10);
-		DriveTrain.rearLeft.set(0.10);
+		DriveTrain.frontRight.set(speed);
+		DriveTrain.frontLeft.set(speed);
+		DriveTrain.middleLeft.set(speed);
+		DriveTrain.rearRight.set(speed);
+		DriveTrain.rearLeft.set(speed);
+		DriveTrain.middleRight.set(speed);
 		
-		if (leftEncoder.getPosition() < desiredTicks && rightEncoder.get() < desiredTicks) {
-			if (leftEncoder.get() < rightEncoder.get()){
-				DriveTrain.frontRight.set(0.1);
-				DriveTrain.rearRight.set(0.1);
-				DriveTrain.frontLeft.set(0.15);
-				DriveTrain.rearLeft.set(0.15);
+		if (DriveTrain.leftEncoder.getPosition() < desiredTicks && DriveTrain.rightEncoder.getPosition() < desiredTicks) {
+			if (DriveTrain.leftEncoder.getPosition() < DriveTrain.rightEncoder.getPosition()){
+				DriveTrain.frontRight.set(-adjustSpeed);
+				DriveTrain.rearRight.set(-adjustSpeed);
+				DriveTrain.middleRight.set(-adjustSpeed);
+				DriveTrain.frontLeft.set(adjustSpeed);
+				DriveTrain.rearLeft.set(adjustSpeed);
+				DriveTrain.middleLeft.set(adjustSpeed);
 			}
-			else if (leftEncoder.getPosition() > rightEncoder.get()){
-				DriveTrain.frontRight.set(0.15);
-				DriveTrain.rearRight.set(0.15);
-				DriveTrain.frontLeft.set(0.1);
-				DriveTrain.rearLeft.set(0.1);
+			else if (DriveTrain.leftEncoder.getPosition() > DriveTrain.rightEncoder.getPosition()){
+				DriveTrain.frontRight.set(-adjustSpeed);
+				DriveTrain.rearRight.set(-adjustSpeed);
+				DriveTrain.middleRight.set(-adjustSpeed);
+				DriveTrain.frontLeft.set(adjustSpeed);
+				DriveTrain.rearLeft.set(adjustSpeed);
+				DriveTrain.middleLeft.set(adjustSpeed);
 			}
 			else {
-				DriveTrain.frontRight.set(0.1);
-				DriveTrain.rearRight.set(0.1);
-				DriveTrain.frontLeft.set(0.1);
-				DriveTrain.rearLeft.set(0.1);
-
+				DriveTrain.frontRight.set(-adjustSpeed);
+				DriveTrain.rearRight.set(-adjustSpeed);
+				DriveTrain.middleRight.set(-adjustSpeed);
+				DriveTrain.frontLeft.set(adjustSpeed);
+				DriveTrain.rearLeft.set(adjustSpeed);
+				DriveTrain.middleLeft.set(adjustSpeed);
 			}
-		}*/
+		}
+		else{
+			DriveTrain.frontRight.set(0);
+			DriveTrain.rearRight.set(0);
+			DriveTrain.middleRight.set(0);
+			DriveTrain.frontLeft.set(0);
+			DriveTrain.rearLeft.set(0);
+			DriveTrain.middleLeft.set(0);
+		}
     }
 
   @Override
@@ -63,8 +83,8 @@ public class DriveStraightCom extends Command {
 
   @Override
 	protected void end() {
-		//DriveTrain.leftEncoder.reset();
-		//DriveTrain.rightEncoder.reset();
+		DriveTrain.leftEncoder.setPosition(0.0);
+		DriveTrain.rightEncoder.setPosition(0.0);
   	}
   
 	@Override

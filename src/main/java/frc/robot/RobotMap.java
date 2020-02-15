@@ -14,23 +14,15 @@ import edu.wpi.first.wpilibj.I2C;
  */
 public class RobotMap {
 
-<<<<<<< HEAD
-    public static int colorMotorPort = 100;
+    /*public static int colorMotorPort = 100;
     public static int colorSensorPort = 98;
     public static int DigitalInputPort1 = 99;
     public static int DigitalInputPort2 = 3;
     public static int UltrasonicPingPort = 44;
-=======
-    public static int colorMotorPort = 0;
-    public static int colorSensorPort = 1000;
-    public static int DigitalInputPort1 = 2000;
-    public static int DigitalInputPort2 = 3;
-    public static int UltrasonicPingPort = 40000;
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     public static int UltrasonicEchoPort = 7;
     public static int climbEncoderPortA = 5;
     public static int climbEncoderPortB = 8;
-    public static int motorPort = 6;
+    public static int motorPort = 6;*/
     public static int joyPort = 0;
     public static int frontLeftPort = 2;
     public static int rearLeftPort = 1;
@@ -38,7 +30,7 @@ public class RobotMap {
     public static int frontRightPort = 12;
     public static int rearRightPort = 14;
     public static int middleRightPort = 11;
-    public static int gyroPort = 18;
+    /*public static int gyroPort = 18;
     public static int foldMotorPort = 19;
     public static int intakeMotorPort = 20;
     public static int foldLimitPort = 21;
@@ -52,10 +44,10 @@ public class RobotMap {
     public static int shooterMotorPort = 29;
     public static int gearShiftPort1 = 30;
     public static int gearShiftPort2 = 31;
-    public static int absEncoderPort = 32;
+    public static int absEncoderPort = 32;*/
 
 
 
 
-    public static I2C.Port i2cPort = I2C.Port.kOnboard;
+   // public static I2C.Port i2cPort = I2C.Port.kOnboard;
 }

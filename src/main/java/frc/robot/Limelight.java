@@ -4,11 +4,11 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-/*
+
 package frc.robot;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+/*
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -25,11 +25,7 @@ public class Limelight extends Subsystem {
     public Limelight() {
     }
 
-<<<<<<< HEAD
     /*public static NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
-=======
-   /* public static NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     public static NetworkTableEntry tx = table.getEntry("tx");
     public static NetworkTableEntry ty = table.getEntry("ty");
     public static NetworkTableEntry tv = table.getEntry("tv");
@@ -40,10 +36,7 @@ public class Limelight extends Subsystem {
         } else {
             return true;
         }*/
-<<<<<<< HEAD
         return true;
-=======
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     }
     
     public static void setLiveStream(int mode){
@@ -63,20 +56,11 @@ public class Limelight extends Subsystem {
                 Shooter.turretMotor.set(1.0);
             }
         }
-<<<<<<< HEAD
         Shooter.turretMotor.set(0.0);*/
     }
 
     public static void rotateVertical(){
   /*      while (ty.getDouble(0.0) != 0){
-=======
-        Shooter.turretMotor.set(0.0);
-    */
-    }
-
-    public static void rotateVertical(){
-      /*  while (ty.getDouble(0.0) != 0){
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
             if (ty.getDouble(0.0) < 0){
                 Shooter.hoodMotor.set(-1.0);
             }
@@ -84,12 +68,8 @@ public class Limelight extends Subsystem {
                 Shooter.hoodMotor.set(1.0);
             }
         Shooter.hoodMotor.set(0.0);
-<<<<<<< HEAD
         }	
     */
-=======
-        }*/	
->>>>>>> 7dba90c71459fa8fa08a87190fccd9dc56acd8ae
     }
 
   @Override
